@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Hugo\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.2.0\f7873a2ebde246a45c2a8d6f3247108b4c88a879\okhttp-3.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="C:\Users\Hugo\Desktop\TCC-App\Limpo - Diarista\app\build\intermediates\pre-dexed\debug\okhttp-3.2.0_cbb2eddd8f9604ec7ddc48b4d4abc6b0603b267d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hugo\Desktop\TCC-App\Limpo - Diarista\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="C:\Users\Hugo\Desktop\TCC-App\Limpo - Diarista\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.1.1_4b109fe938b5b02faa34e0d51cb2104789356cfb.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hugo\Desktop\TCC-App\Limpo - Diarista\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="C:\Users\Hugo\Desktop\TCC-App\Limpo - Diarista\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.1.1_256fd99430755f529b0c2874cc9a0a1bbe9d934b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hugo\Desktop\TCC-App\Limpo - Diarista\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\Users\Hugo\Desktop\TCC-App\Limpo - Diarista\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.1.1_e0465dc58de54daf96e4f8eca8d3825769b3faeb.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hugo\Desktop\TCC-App\Limpo - Diarista\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
+        <dex dex="C:\Users\Hugo\Desktop\TCC-App\Limpo - Diarista\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-8.1.0_61353a364231083febd96b16de326c106cf31ab6.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hugo\Desktop\TCC-App\Limpo - Diarista\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
+        <dex dex="C:\Users\Hugo\Desktop\TCC-App\Limpo - Diarista\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-appindexing-8.1.0_7eb459c206b758dddfb469665d92ebd796448d3e.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hugo\Desktop\TCC-App\Limpo - Diarista\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="C:\Users\Hugo\Desktop\TCC-App\Limpo - Diarista\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.1.1_dc720d7dd34dc051b169eda05dac9516b7004256.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hugo\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="C:\Users\Hugo\Desktop\TCC-App\Limpo - Diarista\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.1_91ec5161b01e0950ca79a1643cad5e41970cf900.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hugo\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="C:\Users\Hugo\Desktop\TCC-App\Limpo - Diarista\app\build\intermediates\pre-dexed\debug\okio-1.6.0_31ca665e8090b5b03109407f179305df1e03b4f2.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hugo\Desktop\TCC-App\Limpo - Diarista\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\Users\Hugo\Desktop\TCC-App\Limpo - Diarista\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1_018ff9cea74fe1e9ad797ed053e1b52ce2405989.jar" />
+    </item>
+
+</items>
