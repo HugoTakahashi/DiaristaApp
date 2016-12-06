@@ -361,6 +361,7 @@
     <string name="nao">Não</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="nome_foto">/foto.jpg</string>
     <string name="sim">Sim</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="title_activity_login">Entrar</string>
@@ -368,10 +369,20 @@
     <string name="title_detalhe_solicitacao">Informações da Diária</string>
     <string name="title_minhas_solicitacoes">Minhas Diarias</string>
     <string name="url_DadosPessoais">Diarista/DadosPessoais</string>
+    <string name="url_alterar_dados">Diarista/Editar</string>
+    <string name="url_alterar_endereco">DiaristaEndereco/Editar</string>
+    <string name="url_alterar_servico">DiaristaServico/Editar</string>
     <string name="url_avalicao">AvaliacaoCliente/Avaliar</string>
+    <string name="url_buscar_diarista">Diarista/CosultarPorId</string>
+    <string name="url_buscar_endereco">DiaristaEndereco/Buscar</string>
+    <string name="url_buscar_nota">AvaliacaoDiarista/CalcularNotaDiarista</string>
+    <string name="url_buscar_servico">DiaristaServico/Buscar</string>
     <string name="url_cadastrar_diarista">Diarista/Cadastrar</string>
     <string name="url_cadastrar_endereco">DiaristaEndereco/Cadastrar</string>
     <string name="url_cadastrar_servico">DiaristaServico/Cadastrar</string>
+    <string name="url_diarista_desativar">Diarista/Desativar</string>
+    <string name="url_foto">https://s3-sa-east-1.amazonaws.com/arquivo-e-imagens/diarista/</string>
+    <string name="url_lista_historico_diaria">Solicitacao/ListaHistoricoDiariasPorDiarista</string>
     <string name="url_login_diarista">Diarista/Login</string>
     <string name="url_prefix">http://limpo-dev.sa-east-1.elasticbeanstalk.com/api/</string>
     <string name="url_solicitacao_aceitar">Solicitacao/Aceitar</string>
@@ -380,6 +391,7 @@
     <string name="url_solicitacao_lista_por_diarista_e_agendada">Solicitacao/ListaPorDiaristaAgendada</string>
     <string name="url_solicitacao_lista_por_diarista_e_pendente_aceitacao">Solicitacao/ListaPorDiaristaPendenteAceitacao</string>
     <string name="url_solicitacao_recusar">Solicitacao/Recusar</string>
+    <string name="url_upload_foto">SandBox/AmazonS3</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>

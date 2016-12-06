@@ -6,8 +6,12 @@
     <!-- Helper -->
     <string name="campo_obrigatorio">Campo obrigatório</string>
 
+    <!-- Nome da foto no AWS S3 -->
+    <string name="nome_foto">/foto.jpg</string>
+
     <!-- Url dos Serviços -->
     <string name="url_prefix">http://limpo-dev.sa-east-1.elasticbeanstalk.com/api/</string>
+    <string name="url_foto">https://s3-sa-east-1.amazonaws.com/arquivo-e-imagens/diarista/</string>
     <string name="url_solicitacao_lista_por_diarista_e_pendente_aceitacao">Solicitacao/ListaPorDiaristaPendenteAceitacao</string>
     <string name="url_solicitacao_lista_por_diarista_e_agendada">Solicitacao/ListaPorDiaristaAgendada</string>
     <string name="url_solicitacao_aceitar">Solicitacao/Aceitar</string>
@@ -18,8 +22,18 @@
     <string name="url_DadosPessoais">Diarista/DadosPessoais</string>
     <string name="url_cadastrar_diarista">Diarista/Cadastrar</string>
     <string name="url_cadastrar_endereco">DiaristaEndereco/Cadastrar</string>
+    <string name="url_alterar_endereco">DiaristaEndereco/Editar</string>
+    <string name="url_alterar_servico">DiaristaServico/Editar</string>
+    <string name="url_alterar_dados">Diarista/Editar</string>
     <string name="url_cadastrar_servico">DiaristaServico/Cadastrar</string>
     <string name="url_solicitacao_cancelar">Solicitacao/CancelarPorParteDaDiarista</string>
+    <string name="url_buscar_endereco">DiaristaEndereco/Buscar</string>
+    <string name="url_buscar_servico">DiaristaServico/Buscar</string>
+    <string name="url_buscar_diarista">Diarista/CosultarPorId</string>
+    <string name="url_buscar_nota">AvaliacaoDiarista/CalcularNotaDiarista</string>
+    <string name="url_upload_foto">SandBox/AmazonS3</string>
+    <string name="url_diarista_desativar">Diarista/Desativar</string>
+    <string name="url_lista_historico_diaria">Solicitacao/ListaHistoricoDiariasPorDiarista</string>
 
     <!-- Chamadas de Web Services -->
     <string name="aguarde">Aguarde</string>

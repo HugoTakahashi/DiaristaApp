@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.diaristaslimpo.limpo"
+    package="br.com.diaristaslimpo.limpo.diarista"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -23,6 +23,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="br.com.diaristaslimpo.limpo.activity.LoginActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/SemBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,23 +31,74 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="br.com.diaristaslimpo.limpo.activity.EnderecoActivity" />
-        <activity android:name="br.com.diaristaslimpo.limpo.activity.SelecionarServicoActivity" />
-        <activity android:name="br.com.diaristaslimpo.limpo.activity.DataServicoActivity" />
+        <activity
+            android:name="br.com.diaristaslimpo.limpo.activity.EnderecoActivity"
+            android:label="Meu endereço"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="br.com.diaristaslimpo.limpo.activity.SelecionarServicoActivity"
+            android:label="Serviços que faço"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="br.com.diaristaslimpo.limpo.activity.DataServicoActivity"
+            android:label=""
+            android:screenOrientation="portrait" />
         <activity
             android:name="br.com.diaristaslimpo.limpo.activity.MinhasSolicitacoesActivity"
-            android:label="@string/title_minhas_solicitacoes" />
+            android:label="@string/title_minhas_solicitacoes"
+            android:screenOrientation="portrait" />
         <activity
             android:name="br.com.diaristaslimpo.limpo.activity.DetalheSolicitacaoActivity"
-            android:label="@string/title_detalhe_solicitacao" />
-        <activity android:name="br.com.diaristaslimpo.limpo.activity.DadosPessoaisActivity" />
+            android:label="@string/title_detalhe_solicitacao"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="br.com.diaristaslimpo.limpo.activity.DadosPessoaisActivity"
+            android:label=""
+            android:screenOrientation="portrait" />
         <activity
             android:name="br.com.diaristaslimpo.limpo.activity.InicialActivity"
-            android:label="@string/title_activity_tela_inicial"
+            android:label="Limpo!"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="br.com.diaristaslimpo.limpo.activity.FormularioDiaristaActivity" />
-        <activity android:name="br.com.diaristaslimpo.limpo.activity.CadastroEnderecoActivity" />
-        <activity android:name="br.com.diaristaslimpo.limpo.activity.HistoricoActivity" />
+        <activity
+            android:name="br.com.diaristaslimpo.limpo.activity.FormularioDiaristaActivity"
+            android:label="Meus dados"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="br.com.diaristaslimpo.limpo.activity.CadastroEnderecoActivity"
+            android:label=""
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="br.com.diaristaslimpo.limpo.activity.HistoricoActivity"
+            android:label="Histórico"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="br.com.diaristaslimpo.limpo.activity.DetalheHistoricoActivity"
+            android:label=""
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="br.com.diaristaslimpo.limpo.activity.MeusEnderecosActivity"
+            android:label=""
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="br.com.diaristaslimpo.limpo.activity.ProximasDiariasActivity"
+            android:label="Próximas diárias"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="br.com.diaristaslimpo.limpo.activity.AvaliacaoActivity"
+            android:label=""
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="br.com.diaristaslimpo.limpo.activity.DetalheProximaDiariaActivity"
+            android:label="Informações da próxima diária"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="br.com.diaristaslimpo.limpo.activity.ConfiguracaoActivity"
+            android:label="Configuração"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="br.com.diaristaslimpo.limpo.activity.ListaHistoricoActivity"
+            android:label="Histórico" />
         <!--
  ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -54,12 +106,6 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-
-        <activity android:name="br.com.diaristaslimpo.limpo.activity.DetalheHistoricoActivity" />
-        <activity android:name="br.com.diaristaslimpo.limpo.activity.MeusEnderecosActivity" />
-        <activity android:name="br.com.diaristaslimpo.limpo.activity.ProximasDiariasActivity" />
-        <activity android:name="br.com.diaristaslimpo.limpo.activity.AvaliacaoActivity" />
-        <activity android:name="br.com.diaristaslimpo.limpo.activity.DetalheProximaDiariaActivity" />
     </application>
 
 </manifest>

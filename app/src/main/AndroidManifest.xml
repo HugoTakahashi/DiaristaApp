@@ -17,28 +17,83 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".activity.LoginActivity"
-            android:theme="@style/SemBar">
+            android:theme="@style/SemBar"
+            android:screenOrientation="portrait"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.EnderecoActivity" />
-        <activity android:name=".activity.SelecionarServicoActivity" />
-        <activity android:name=".activity.DataServicoActivity" />
+        <activity android:name=".activity.EnderecoActivity"
+            android:label="Meu endereço"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.SelecionarServicoActivity"
+            android:label="Serviços que faço"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.DataServicoActivity"
+            android:label=""
+            android:screenOrientation="portrait"
+            />
         <activity android:name=".activity.MinhasSolicitacoesActivity"
-            android:label="@string/title_minhas_solicitacoes"/>
+            android:label="@string/title_minhas_solicitacoes"
+            android:screenOrientation="portrait"
+            />
         <activity android:name=".activity.DetalheSolicitacaoActivity"
-            android:label="@string/title_detalhe_solicitacao"/>
-        <activity android:name=".activity.DadosPessoaisActivity" />
+            android:label="@string/title_detalhe_solicitacao"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.DadosPessoaisActivity"
+            android:label=""
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".activity.InicialActivity"
-            android:label="@string/title_activity_tela_inicial"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.FormularioDiaristaActivity" />
-        <activity android:name=".activity.CadastroEnderecoActivity" />
-        <activity android:name=".activity.HistoricoActivity" />
+            android:label="Limpo!"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.FormularioDiaristaActivity"
+            android:label="Meus dados"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.CadastroEnderecoActivity"
+            android:label=""
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.HistoricoActivity"
+            android:label="Histórico"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.DetalheHistoricoActivity"
+            android:label=""
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.MeusEnderecosActivity"
+            android:label=""
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.ProximasDiariasActivity"
+            android:label="Próximas diárias"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.AvaliacaoActivity"
+            android:label=""
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.DetalheProximaDiariaActivity"
+            android:label="Informações da próxima diária"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.ConfiguracaoActivity"
+            android:label="Configuração"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.ListaHistoricoActivity"
+            android:label="Histórico"/>
         <!--
  ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -46,12 +101,6 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-
-        <activity android:name=".activity.DetalheHistoricoActivity" />
-        <activity android:name=".activity.MeusEnderecosActivity" />
-        <activity android:name=".activity.ProximasDiariasActivity" />
-        <activity android:name=".activity.AvaliacaoActivity" />
-        <activity android:name=".activity.DetalheProximaDiariaActivity" />
     </application>
 
 </manifest>

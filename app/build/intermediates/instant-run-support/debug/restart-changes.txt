@@ -1,0 +1,4 @@
+CHANGED,C:\Users\user\Downloads\app 04-12\Diarista-04-12-2016\Limpo - Diarista\app\build\intermediates\transforms\instantRun\debug\folders\1\5\main\br\com\diaristaslimpo\limpo\activity\InicialActivity$2.class
+CHANGED,C:\Users\user\Downloads\app 04-12\Diarista-04-12-2016\Limpo - Diarista\app\build\intermediates\transforms\instantRun\debug\folders\1\5\main\br\com\diaristaslimpo\limpo\activity\InicialActivity.class
+CHANGED,C:\Users\user\Downloads\app 04-12\Diarista-04-12-2016\Limpo - Diarista\app\build\intermediates\transforms\instantRun\debug\folders\1\5\main\br\com\diaristaslimpo\limpo\activity\InicialActivity$1.class
+CHANGED,C:\Users\user\Downloads\app 04-12\Diarista-04-12-2016\Limpo - Diarista\app\build\intermediates\transforms\instantRun\debug\folders\1\5\main\br\com\diaristaslimpo\limpo\activity\InicialActivity$3.class

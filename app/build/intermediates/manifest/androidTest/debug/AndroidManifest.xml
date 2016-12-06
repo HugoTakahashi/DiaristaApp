@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.diaristaslimpo.limpo.test">
+    package="br.com.diaristaslimpo.limpo.diarista.test">
 
     <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="23" />
 
@@ -9,8 +9,8 @@
     </application>
 
     <instrumentation android:name="android.test.InstrumentationTestRunner"
-                     android:targetPackage="br.com.diaristaslimpo.limpo"
+                     android:targetPackage="br.com.diaristaslimpo.limpo.diarista"
                      android:handleProfiling="false"
                      android:functionalTest="false"
-                     android:label="Tests for br.com.diaristaslimpo.limpo"/>
+                     android:label="Tests for br.com.diaristaslimpo.limpo.diarista"/>
 </manifest>

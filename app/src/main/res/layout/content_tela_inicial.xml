@@ -24,7 +24,7 @@
             android:id="@+id/fotoDiarista"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:src="@drawable/diarista"
+            android:src="@drawable/users"
             />
         <Button
             android:id="@+id/foto"
@@ -50,8 +50,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="4,8"
-            android:id="@+id/textView25"
+            android:id="@+id/inicial_nota"
             android:layout_gravity="center_horizontal"
             android:textSize="30dp"
             />
@@ -59,8 +58,7 @@
         <ImageView
             android:layout_width="30dp"
             android:layout_height="40dp"
-            android:id="@+id/imageView4"
-            android:src="@drawable/estrela"
+            android:src="@drawable/estrelamario"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="10dp"
             android:paddingBottom="7dp"

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fefefe"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:weightSum="1"
+        tools:context=".activity.ConfiguracaoActivity">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="356dp"
+            android:layout_height="300dp"
+            android:src="@drawable/desativar_conta"
+            android:layout_weight="0.55" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Desativar Conta"
+            android:background="#c60b2d"
+            android:textColor="#fffefe"
+            android:id="@+id/bt_desativar"
+            android:layout_marginTop="40dp"/>
+    </LinearLayout>
+</ScrollView>

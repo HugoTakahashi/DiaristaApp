@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app2="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -93,9 +97,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#c60b2d"
-            android:text="Próxima Etapa"
+            android:text="Salvar Novos Serviços"
             android:textColor="#fffefe"
             android:layout_gravity="bottom" />
     </LinearLayout>
 
 </LinearLayout>
+    </ScrollView>

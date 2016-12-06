@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -51,7 +55,7 @@
                 android:ems="10"
                 android:id="@+id/avalicao_obs"
                 android:layout_gravity="center_horizontal"
-                android:hint="Obsrvações"
+                android:hint="Observações"
                 />
         </android.support.design.widget.TextInputLayout>
     </LinearLayout>
@@ -72,4 +76,4 @@
     </LinearLayout>
 
 </LinearLayout>
-
+</ScrollView>
