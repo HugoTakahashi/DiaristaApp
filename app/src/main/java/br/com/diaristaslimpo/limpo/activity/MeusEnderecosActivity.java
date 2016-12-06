@@ -12,11 +12,11 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-import br.com.diaristaslimpo.limpo.Objetos.ObjEndereco;
+import br.com.diaristaslimpo.limpo.to.ObjEndereco;
 import br.com.diaristaslimpo.limpo.R;
 import br.com.diaristaslimpo.limpo.banco.DataBase;
 import br.com.diaristaslimpo.limpo.banco.ScriptSQL;
-import br.com.diaristaslimpo.limpo.helper.AdapterEndereco;
+import br.com.diaristaslimpo.limpo.adapter.AdapterEndereco;
 
 public class MeusEnderecosActivity extends AppCompatActivity {
     private ListView lst;

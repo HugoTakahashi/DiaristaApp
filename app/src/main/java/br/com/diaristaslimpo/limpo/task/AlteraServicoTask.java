@@ -11,21 +11,16 @@ import java.io.IOException;
 
 import br.com.diaristaslimpo.limpo.R;
 import br.com.diaristaslimpo.limpo.activity.InicialActivity;
-import br.com.diaristaslimpo.limpo.util.GeraJson;
-import br.com.diaristaslimpo.limpo.util.MessageBox;
 
 /**
  * Created by user on 24/04/2016.
  */
-public class AvaliacaoTask extends AsyncTask<String, Void, String> {
-
+public class AlteraServicoTask extends AsyncTask<String, Void, Boolean> {
     private Context context;
     private ProgressDialog dialog;
-    private ConectaWS requester = new ConectaWS();
-    private String url, json;
     private String idDiarista;
 
-    public AvaliacaoTask(Context context) {
+    public AlteraServicoTask(Context context) {
         this.context = context;
     }
 
@@ -39,40 +34,33 @@ public class AvaliacaoTask extends AsyncTask<String, Void, String> {
     }
 
     @Override
-    protected String doInBackground(String... params) {
-        idDiarista = params[4];
-        GeraJson geraJson = new GeraJson();
-        String json = geraJson.jsonEnviaAvaliacao(params[0],params[1],params[2],params[3]);
+    protected Boolean doInBackground(String... params) {
         try {
-            url = context.getResources().getString(R.string.url_prefix) +
-                    context.getResources().getString(R.string.url_avalicao);
-            requester.doPost(url, json);
+            String json = params[0];
+            idDiarista = params[1];
 
+            String url = context.getResources().getString(R.string.url_prefix)
+                    + context.getResources().getString(R.string.url_alterar_servico);
+            new ConectaWS().doPostJsonObject(url, json);
 
+            return true;
         } catch (IOException e) {
-
             e.printStackTrace();
         } catch (JSONException e) {
-
             e.printStackTrace();
         }
 
-        return "ok" ;
+        return false;
     }
 
     @Override
-    protected void onPostExecute(String resposta) {
+    protected void onPostExecute(Boolean resposta) {
         dialog.dismiss();
 
-        if (resposta == "ok") {
+        if(resposta == true) {
             Intent intent = new Intent(context, InicialActivity.class);
             intent.putExtra("idDiarista",idDiarista);
             context.startActivity(intent);
-        } else {
-            onCancelled();
-            MessageBox.show(context,
-                    context.getResources().getString(R.string.erro_de_processamento),
-                    resposta);
         }
     }
 }

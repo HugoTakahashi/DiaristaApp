@@ -12,7 +12,7 @@ import java.io.IOException;
 
 import br.com.diaristaslimpo.limpo.R;
 import br.com.diaristaslimpo.limpo.activity.InicialActivity;
-import br.com.diaristaslimpo.limpo.helper.MessageBox;
+import br.com.diaristaslimpo.limpo.util.MessageBox;
 import br.com.diaristaslimpo.limpo.to.CadastroCompletoDiaristaTo;
 
 /**
@@ -82,7 +82,7 @@ public class CadastrarDiaristaTask extends AsyncTask<CadastroCompletoDiaristaTo,
 
         if (resposta == null) {
             Intent intent = new Intent(context, InicialActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             intent.putExtra("idDiarista", String.valueOf(idDiarista));
             context.startActivity(intent);
         } else {

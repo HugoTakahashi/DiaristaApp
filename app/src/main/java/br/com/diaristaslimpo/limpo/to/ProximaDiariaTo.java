@@ -1,9 +1,9 @@
-package br.com.diaristaslimpo.limpo.Objetos;
+package br.com.diaristaslimpo.limpo.to;
 
 /**
  * Created by user on 22/08/2016.
  */
-public class ObjProxDiaria {
+public class ProximaDiariaTo {
     private String nome;
     private double valor;
     private String status;
@@ -11,7 +11,7 @@ public class ObjProxDiaria {
     private int iconeRid;
     private String dataSolicitacao;
 
-    public ObjProxDiaria() {
+    public ProximaDiariaTo() {
     }
 
     public String getNome() {

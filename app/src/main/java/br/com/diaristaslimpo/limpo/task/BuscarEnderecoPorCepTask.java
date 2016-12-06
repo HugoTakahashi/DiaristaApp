@@ -9,9 +9,9 @@ import android.widget.TextView;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import br.com.diaristaslimpo.limpo.Objetos.Endereco;
+import br.com.diaristaslimpo.limpo.to.Endereco;
 import br.com.diaristaslimpo.limpo.R;
-import br.com.diaristaslimpo.limpo.helper.MessageBox;
+import br.com.diaristaslimpo.limpo.util.MessageBox;
 
 /**
  * Created by user on 24/04/2016.

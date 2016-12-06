@@ -3,35 +3,22 @@ package br.com.diaristaslimpo.limpo.task;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
-
 import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.IOException;
-
 import br.com.diaristaslimpo.limpo.R;
-import br.com.diaristaslimpo.limpo.banco.DataBase;
-import br.com.diaristaslimpo.limpo.banco.ScriptSQL;
-import br.com.diaristaslimpo.limpo.helper.MessageBox;
-import br.com.diaristaslimpo.limpo.activity.MeusEnderecosActivity;
+import br.com.diaristaslimpo.limpo.activity.InicialActivity;
 
 /**
  * Created by user on 24/04/2016.
  */
-public class AlteraEnderecoTask extends AsyncTask<String, Void, String> { // linha 22
+public class AlteraEnderecoTask extends AsyncTask<String, Void, Boolean> {
     private Context context;
     private ProgressDialog dialog;
-    private ConectaWS requester;
-    private DataBase dataBase;
-    private SQLiteDatabase conn;
-    private String json;
+    private String idDiarista;
 
     public AlteraEnderecoTask(Context context) {
-
         this.context = context;
-
     }
 
     @Override
@@ -44,61 +31,34 @@ public class AlteraEnderecoTask extends AsyncTask<String, Void, String> { // lin
     }
 
     @Override
-    protected String doInBackground(String... params) {// thread em segundaria
-        String resp = "oi";
+    protected Boolean doInBackground(String... params) {
         try {
-            json = params[0];
-            requester = new ConectaWS();
-            final JSONObject recebe = requester.doPostJsonObject("http://limpo-dev.sa-east-1.elasticbeanstalk.com/api/ClienteEndereco/Cadastrar", json);
+            String json = params[0];
+            idDiarista = params[1];
 
-                dataBase = new DataBase(context);
-                conn = dataBase.getWritableDatabase();
-                ScriptSQL scriptSQL = new ScriptSQL(conn);
+            String url = context.getResources().getString(R.string.url_prefix)
+                    + context.getResources().getString(R.string.url_alterar_endereco);
+            new ConectaWS().doPostJsonObject(url, json);
 
-                scriptSQL.alterarEndereco(
-                        recebe.getString("IdEndereco"),
-                        recebe.getString("IdentificacaoEndereco"),
-                        recebe.getInt("Cep"),
-                        recebe.getString("Logradouro"),
-                        recebe.getInt("Numero"),
-                        recebe.getString("Complemento"),
-                        recebe.getString("Bairro"),
-                        recebe.getString("Cidade"),
-                        recebe.getString("PontoReferencia"),
-                        recebe.getString("IdEndereco")
-                );
-
-                resp = null;
-
-
-
+            return true;
         } catch (IOException e) {
             e.printStackTrace();
         } catch (JSONException e) {
-            resp = "Endereço Invalido";
             e.printStackTrace();
         }
-        return resp;
+
+        return false;
     }
 
     @Override
-    protected void onPostExecute(String resposta) { // thread principal
+    protected void onPostExecute(Boolean resposta) {
+        dialog.dismiss();
 
-        if (resposta == null) {
-            dialog.dismiss();
-            Intent it = new Intent(context, MeusEnderecosActivity.class);
-            context.startActivity(it);
-
-        } else {
-            dialog.dismiss();
-            onCancelled();
-            MessageBox.show(context, "Erro ao efetuar Alteração do endereco", resposta);
-
+        if(resposta == true) {
+            Intent intent = new Intent(context, InicialActivity.class);
+            intent.putExtra("idDiarista",idDiarista);
+            context.startActivity(intent);
         }
-
-
     }
-
-
 }
 

@@ -12,11 +12,11 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-import br.com.diaristaslimpo.limpo.Objetos.ObjEndereco;
+import br.com.diaristaslimpo.limpo.to.ObjEndereco;
 import br.com.diaristaslimpo.limpo.R;
 import br.com.diaristaslimpo.limpo.banco.DataBase;
 import br.com.diaristaslimpo.limpo.banco.ScriptSQL;
-import br.com.diaristaslimpo.limpo.helper.AdapterEndereco;
+import br.com.diaristaslimpo.limpo.adapter.AdapterEndereco;
 
 public class EnderecoActivity extends AppCompatActivity implements View.OnClickListener {
     private ListView lst;
@@ -38,8 +38,6 @@ public class EnderecoActivity extends AppCompatActivity implements View.OnClickL
 
         itens = new ArrayList<>();
         select = new ArrayList<>();
-      //  itens.add( new ObjEndereco("Rua dos pampas", "006624155", "jd veloso", R.mipmap.iconapp));
-
         dataBase = new DataBase(this);
         conn = dataBase.getWritableDatabase();
         ScriptSQL scriptSQL = new ScriptSQL(conn);

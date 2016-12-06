@@ -11,14 +11,14 @@ import br.com.diaristaslimpo.limpo.R;
 import br.com.diaristaslimpo.limpo.util.MessageBox;
 
 /**
- * Created by user on 24/04/2016.
+ * Created by Hugo on 24/04/2016.
  */
-public class ProximasDiariasTask extends AsyncTask<String, Void, JSONArray> {
+public class ListaHistoricoDiariasTask extends AsyncTask<String, Void, JSONArray> {
     private Context context;
     private ProgressDialog dialog;
     public AsyncResponse delegate = null;
 
-    public ProximasDiariasTask(Context context) {
+    public ListaHistoricoDiariasTask(Context context) {
         this.context = context;
     }
 
@@ -33,17 +33,18 @@ public class ProximasDiariasTask extends AsyncTask<String, Void, JSONArray> {
 
     @Override
     protected JSONArray doInBackground(String... params) {
-        String id = params[0];
+        String idCliente = params[0];
         String url = context.getResources().getString(R.string.url_prefix) +
-                context.getResources().getString(R.string.url_solicitacao_lista_por_diarista_e_agendada);
+                context.getResources().getString(R.string.url_lista_historico_diaria);
 
-        return new ConectaWS().doGetJsonArray(url, id);
+        return new ConectaWS().doGetJsonArray(url, idCliente);
     }
 
     @Override
     protected void onPostExecute(JSONArray resposta) {
         if(resposta == null || resposta.length() == 0){
-            MessageBox.showClose(context,"Ops!","Não há registros no momento.");
+            MessageBox.showClose(context,"Ops!","Não há registros no momento");
+
         }
         delegate.processFinish(resposta);
         dialog.dismiss();

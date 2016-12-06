@@ -1,4 +1,4 @@
-package br.com.diaristaslimpo.limpo.helper;
+package br.com.diaristaslimpo.limpo.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import br.com.diaristaslimpo.limpo.Objetos.ObjEndereco;
+import br.com.diaristaslimpo.limpo.to.ObjEndereco;
 import br.com.diaristaslimpo.limpo.R;
 
 /**

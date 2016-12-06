@@ -17,6 +17,7 @@ public class MinhaSolicitacaoTo implements Serializable{
     private String Observacao;
     private String Valor;
     private String PeriodoDiaria;
+    private String dataDiariaJson;
 
     public MinhaSolicitacaoTo(){}
 
@@ -92,6 +93,14 @@ public class MinhaSolicitacaoTo implements Serializable{
         Servico = servico;
     }
 
+    public String getDataDiariaJson() {
+        return dataDiariaJson;
+    }
+
+    public void setDataDiariaJson(String dataDiariaJson) {
+        this.dataDiariaJson = dataDiariaJson;
+    }
+
     public MinhaSolicitacaoTo jsonParaTo(MinhaSolicitacaoTo to, JSONObject json){
         try {
             to.setIdCliente((Integer) json.get("IdCliente"));
@@ -102,7 +111,7 @@ public class MinhaSolicitacaoTo implements Serializable{
             to.setServico((String) json.get("Servicos"));
             to.setValor((String) json.get("Valor"));
             to.setPeriodoDiaria((String) json.get("PeriodoDiaria"));
-
+            to.setDataDiariaJson((String) json.get("DataDiariaJson"));
             if(!json.isNull("Observacao"))
                 to.setObservacao((String) json.get("Observacao"));
 

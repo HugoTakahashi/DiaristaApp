@@ -14,11 +14,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import br.com.diaristaslimpo.limpo.AsyncResponse;
-import br.com.diaristaslimpo.limpo.Objetos.ObjOrcamento;
-import br.com.diaristaslimpo.limpo.adapter.MinhasSolicitacoesAdapter;
 import br.com.diaristaslimpo.limpo.adapter.ProximasDiariasAdapter;
 import br.com.diaristaslimpo.limpo.R;
-import br.com.diaristaslimpo.limpo.task.MinhasSolicitacoesTask;
 import br.com.diaristaslimpo.limpo.task.ProximasDiariasTask;
 import br.com.diaristaslimpo.limpo.to.MinhaSolicitacaoTo;
 

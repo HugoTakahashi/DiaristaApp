@@ -13,11 +13,11 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import br.com.diaristaslimpo.limpo.Objetos.ObjDiarista;
+import br.com.diaristaslimpo.limpo.to.DiaristaTo;
 import br.com.diaristaslimpo.limpo.R;
 import br.com.diaristaslimpo.limpo.banco.DataBase;
 import br.com.diaristaslimpo.limpo.banco.ScriptSQL;
-import br.com.diaristaslimpo.limpo.helper.GeraJson;
+import br.com.diaristaslimpo.limpo.util.GeraJson;
 import br.com.diaristaslimpo.limpo.task.BaixaDadosPessoaisTask;
 
 public class DadosPessoaisActivity extends AppCompatActivity {
@@ -49,7 +49,7 @@ public class DadosPessoaisActivity extends AppCompatActivity {
             conn = dataBase.getWritableDatabase();
 
             ScriptSQL sql = new ScriptSQL(conn);
-            ArrayList<ObjDiarista> obj = new ArrayList<>();
+            ArrayList<DiaristaTo> obj;
             obj = sql.selectDiarista();
             id = obj.get(0).getIdDiarista();
             edtNome.setText(obj.get(0).getNome());

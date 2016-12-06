@@ -1,9 +1,9 @@
-package br.com.diaristaslimpo.limpo.Objetos;
+package br.com.diaristaslimpo.limpo.to;
 
 /**
  * Created by user on 25/09/2016.
  */
-public class ObjDiarista {
+public class DiaristaTo {
 
     private int IdDiarista;
     private String nome;

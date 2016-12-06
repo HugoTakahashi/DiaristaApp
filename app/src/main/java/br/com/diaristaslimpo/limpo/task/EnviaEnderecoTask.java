@@ -14,7 +14,7 @@ import java.io.IOException;
 import br.com.diaristaslimpo.limpo.R;
 import br.com.diaristaslimpo.limpo.banco.DataBase;
 import br.com.diaristaslimpo.limpo.banco.ScriptSQL;
-import br.com.diaristaslimpo.limpo.helper.MessageBox;
+import br.com.diaristaslimpo.limpo.util.MessageBox;
 import br.com.diaristaslimpo.limpo.activity.SelecionarServicoActivity;
 
 /**

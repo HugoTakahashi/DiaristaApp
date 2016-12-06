@@ -3,36 +3,26 @@ package br.com.diaristaslimpo.limpo.task;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-
 import br.com.diaristaslimpo.limpo.R;
-import br.com.diaristaslimpo.limpo.banco.DataBase;
-import br.com.diaristaslimpo.limpo.banco.ScriptSQL;
-import br.com.diaristaslimpo.limpo.helper.GeraJson;
-import br.com.diaristaslimpo.limpo.helper.MessageBox;
+import br.com.diaristaslimpo.limpo.util.MessageBox;
 import br.com.diaristaslimpo.limpo.activity.LoginActivity;
 
 /**
  * Created by user on 24/04/2016.
  */
-public class DesativarContaTask extends AsyncTask<String, Void, String> { // linha 22
+public class DesativarContaTask extends AsyncTask<String, Void, Boolean> {
     private Context context;
     private ProgressDialog dialog;
-    private ConectaWS requester;
-    private DataBase dataBase;
-    private SQLiteDatabase conn;
-
+    private String mensagemRetorno = "";
+    private String idDiarista;
 
     public DesativarContaTask(Context context) {
-
         this.context = context;
-
     }
 
     @Override
@@ -45,55 +35,35 @@ public class DesativarContaTask extends AsyncTask<String, Void, String> { // lin
     }
 
     @Override
-    protected String doInBackground(String... params) {// thread em segundaria
-        String resp = "oi";
+    protected Boolean doInBackground(String... params) {
+        idDiarista = params[0];
+        Boolean isValido = false;
+
+        String url = context.getResources().getString(R.string.url_prefix) +
+                context.getResources().getString(R.string.url_diarista_desativar);
+
+        JSONObject json = new ConectaWS().doGetJsonObject(url, idDiarista);
+
         try {
-            dataBase = new DataBase(context);
-            conn = dataBase.getWritableDatabase();
-            ScriptSQL scriptSQL = new ScriptSQL(conn);
-            String idCliente = String.valueOf(scriptSQL.retornaIdDiarista());
-            GeraJson geraJson = new GeraJson();
-            String json = geraJson.jsonId(idCliente);
-
-            requester = new ConectaWS();
-
-            final JSONObject recebe = requester.doPostJsonObject("http://limpo-dev.sa-east-1.elasticbeanstalk.com/api/Cliente/Cadastrar", json);
-
-            scriptSQL.logof();
-
-            resp = null;
-
-
-        } catch (IOException e) {
-            e.printStackTrace();
+            isValido = (Boolean) json.get("IsValido");
+            mensagemRetorno = (String) json.get("Mensagem");
         } catch (JSONException e) {
-            resp = "Dados invalidos ou já cadastrados";
             e.printStackTrace();
         }
-        return resp;
+
+        return isValido;
     }
 
     @Override
-    protected void onPostExecute(String resposta) { // thread principal
-
-        if (resposta == null) {
-            dialog.dismiss();
-            Intent it = new Intent(context, LoginActivity.class);
-            context.startActivity(it);
-
-        }else{
-            dialog.dismiss();
+    protected void onPostExecute(Boolean sucesso) {
+        dialog.dismiss();
+        if (sucesso) {
+            Intent intent = new Intent(context, LoginActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            context.startActivity(intent);
+        } else {
             onCancelled();
-            MessageBox.show(context,"Erro ao efetuar Alteração dos Dados",resposta);
-
+            MessageBox.show(context,"Erro - Desativar",mensagemRetorno);
         }
-
-
-
-
-
     }
-
-
 }
-

@@ -3,34 +3,27 @@ package br.com.diaristaslimpo.limpo.task;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.IOException;
 
 import br.com.diaristaslimpo.limpo.R;
-import br.com.diaristaslimpo.limpo.banco.DataBase;
-import br.com.diaristaslimpo.limpo.banco.ScriptSQL;
-import br.com.diaristaslimpo.limpo.helper.MessageBox;
+import br.com.diaristaslimpo.limpo.activity.InicialActivity;
+import br.com.diaristaslimpo.limpo.util.MessageBox;
 
 /**
  * Created by user on 24/04/2016.
  */
-public class AlteraCadastroTask extends AsyncTask<String, Void, String> { // linha 22
+public class AlteraCadastroTask extends AsyncTask<String, Void, Boolean> {
     private Context context;
     private ProgressDialog dialog;
-    private ConectaWS requester;
-    private DataBase dataBase;
-    private SQLiteDatabase conn;
-
+    private String mensagem;
+    private String idDiarista;
 
     public AlteraCadastroTask(Context context) {
-
         this.context = context;
-
     }
 
     @Override
@@ -43,61 +36,36 @@ public class AlteraCadastroTask extends AsyncTask<String, Void, String> { // lin
     }
 
     @Override
-    protected String doInBackground(String... params) {// thread em segundaria
-        String resp = "oi";
+    protected Boolean doInBackground(String... params) {
         try {
             String json = params[0];
+            idDiarista = params[1];
+            String url = context.getResources().getString(R.string.url_prefix)
+                    + context.getResources().getString(R.string.url_alterar_dados);
 
-            requester = new ConectaWS();
-
-            final JSONObject recebe = requester.doPostJsonObject("http://limpo-dev.sa-east-1.elasticbeanstalk.com/api/Cliente/Cadastrar", json);
-
-            dataBase = new DataBase(context);
-            conn = dataBase.getWritableDatabase();
-
-            ScriptSQL scriptSQL = new ScriptSQL(conn);
-            scriptSQL.alterarCliente(
-                    recebe.getString("IdCliente"),
-                    recebe.getString("Nome"),
-                    recebe.getString("Sobrenome"),
-                    recebe.getString("DataNascimento"),//verificar se web service está pronto
-                    recebe.getInt("Cpf"),
-                    recebe.getString("Email"),
-                    Integer.parseInt(recebe.getString("Celular")));
-
-            resp = null;
-
-
+            new ConectaWS().doPostJsonObject(url, json);
+            return true;
         } catch (IOException e) {
             e.printStackTrace();
+            mensagem = "";
         } catch (JSONException e) {
-            resp = "Dados invalidos ou já cadastrados";
             e.printStackTrace();
+            mensagem = "";
         }
-        return resp;
+        return false;
     }
 
     @Override
-    protected void onPostExecute(String resposta) { // thread principal
+    protected void onPostExecute(Boolean isValido) {
+        dialog.dismiss();
 
-        if (resposta == null) {
-            dialog.dismiss();
-            Intent it = new Intent(context, AlteraCadastroTask.class);
-            context.startActivity(it);
-
+        if (isValido) {
+            Intent intent = new Intent(context, InicialActivity.class);
+            intent.putExtra("idDiarista",idDiarista);
+            context.startActivity(intent);
         }else{
-            dialog.dismiss();
             onCancelled();
-            MessageBox.show(context,"Erro ao efetuar Alteração dos Dados",resposta);
-
+            MessageBox.show(context, context.getResources().getString(R.string.erro_de_processamento), mensagem);
         }
-
-
-
-
-
     }
-
-
 }
-

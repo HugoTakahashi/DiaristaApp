@@ -12,8 +12,8 @@ import java.io.IOException;
 
 import br.com.diaristaslimpo.limpo.R;
 import br.com.diaristaslimpo.limpo.activity.InicialActivity;
-import br.com.diaristaslimpo.limpo.helper.GeraJson;
-import br.com.diaristaslimpo.limpo.helper.MessageBox;
+import br.com.diaristaslimpo.limpo.util.GeraJson;
+import br.com.diaristaslimpo.limpo.util.MessageBox;
 
 /**
  * Created by user on 25/11/2016.

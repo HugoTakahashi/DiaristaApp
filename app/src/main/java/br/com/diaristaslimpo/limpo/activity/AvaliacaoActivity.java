@@ -36,16 +36,24 @@ public class AvaliacaoActivity extends AppCompatActivity {
         nomeCliente = (TextView) findViewById(R.id.textView18);
         nomeCliente.setText(bundle.getString("NomeCliente"));
 
-
         findViewById(R.id.bt_avaliar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                notaint = (int) nota.getRating();
-                new AvaliacaoTask(AvaliacaoActivity.this).execute(String.valueOf(notaint),obs.getText().toString(),
-                                                                    idSolicitacao,idCliente,idDiarista);
+                if(validarPreenchimentoObrigatorio()) {
+                    notaint = (int) nota.getRating();
+                    new AvaliacaoTask(AvaliacaoActivity.this).execute(String.valueOf(notaint), obs.getText().toString(),
+                            idSolicitacao, idCliente, idDiarista);
+                }
             }
         });
+    }
 
+    private boolean validarPreenchimentoObrigatorio(){
+        if(obs.getText().toString().matches("")){
+            obs.setError("Campo obrigatório");
+            return false;
+        }
 
+        return true;
     }
 }

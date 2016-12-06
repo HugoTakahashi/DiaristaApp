@@ -8,6 +8,7 @@ import org.json.JSONArray;
 
 import br.com.diaristaslimpo.limpo.AsyncResponse;
 import br.com.diaristaslimpo.limpo.R;
+import br.com.diaristaslimpo.limpo.util.MessageBox;
 
 /**
  * Created by user on 24/04/2016.
@@ -41,6 +42,11 @@ public class MinhasSolicitacoesTask extends AsyncTask<String, Void, JSONArray> {
 
     @Override
     protected void onPostExecute(JSONArray resposta) {
+        if(resposta == null || resposta.length() == 0){
+            MessageBox.showClose(context,"Ops!","Não há registros no momento.");
+
+        }
+
         delegate.processFinish(resposta);
         dialog.dismiss();
     }

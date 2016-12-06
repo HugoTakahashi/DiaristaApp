@@ -1,7 +1,13 @@
 package br.com.diaristaslimpo.limpo.helper;
 
+import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import br.com.diaristaslimpo.limpo.R;
 import br.com.diaristaslimpo.limpo.activity.FormularioDiaristaActivity;
@@ -14,8 +20,9 @@ import br.com.diaristaslimpo.limpo.util.MaskUtil;
  */
 
 public class FormularioDiaristaHelper extends BaseHelper{
-        private EditText nome, sobrenome, dataNascimento, cpf, email, senha, confirmacaoSenha, celular;
+    private EditText nome, sobrenome, dataNascimento, cpf, email, senha, confirmacaoSenha, celular;
     private RadioButton masculino, feminino;
+    private LinearLayout genero;
     private FormularioDiaristaTo to;
 
     public EditText getDataNascimento(){
@@ -40,6 +47,7 @@ public class FormularioDiaristaHelper extends BaseHelper{
         celular = (EditText) activity.findViewById(R.id.formulario_diarista_celular);
         masculino = (RadioButton) activity.findViewById(R.id.formulario_diarista_genero_masculino);
         feminino = (RadioButton) activity.findViewById(R.id.formulario_diarista_genero_feminino);
+        genero = (LinearLayout) activity.findViewById(R.id.formulario_diarista_generos);
 
         to = new FormularioDiaristaTo();
         mask();
@@ -73,6 +81,34 @@ public class FormularioDiaristaHelper extends BaseHelper{
         validarPreenchimentoCampoObrigatorio(celular);
 
         return super.getIsValid();
+    }
+
+    public void preencheCampos(JSONObject json){
+        try {
+            nome.setText((String) json.get("Nome"));
+            sobrenome.setText((String) json.get("Sobrenome"));
+            cpf.setText((String) json.get("Cpf"));
+            dataNascimento.setText((String) json.get("DataNascimentoFormatada"));
+            to.setDataNascimento((String) json.get("DataNascimentoJson"));
+            celular.setText((String) json.get("Celular"));
+            email.setText((String) json.get("Email"));
+            senha.setText((String) json.get("Senha"));
+            confirmacaoSenha.setText((String) json.get("Senha"));
+            String genero = (String) json.get("Genero");
+            if(genero.equals("F"))
+                feminino.setChecked(true);
+            else
+                masculino.setChecked(true);
+        } catch(JSONException e){
+        }
+
+        escondeCampos();
+    }
+
+    private void escondeCampos() {
+        genero.setVisibility(View.GONE);
+        senha.setVisibility(View.GONE);
+        confirmacaoSenha.setVisibility(View.GONE);
     }
 
     private void mask(){

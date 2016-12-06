@@ -13,7 +13,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import br.com.diaristaslimpo.limpo.R;
-import br.com.diaristaslimpo.limpo.helper.DateUtils;
+import br.com.diaristaslimpo.limpo.util.DateUtils;
 
 public class DataServicoActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText edt;

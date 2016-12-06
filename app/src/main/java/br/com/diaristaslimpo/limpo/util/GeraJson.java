@@ -1,4 +1,4 @@
-package br.com.diaristaslimpo.limpo.helper;
+package br.com.diaristaslimpo.limpo.util;
 
 import org.json.JSONException;
 import org.json.JSONObject;

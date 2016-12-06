@@ -14,8 +14,6 @@ import br.com.diaristaslimpo.limpo.task.AceitarSolicitacaoTask;
 import br.com.diaristaslimpo.limpo.task.RecusarSolicitacaoTask;
 import br.com.diaristaslimpo.limpo.to.MinhaSolicitacaoTo;
 
-import static android.R.drawable.ic_menu_delete;
-
 public class DetalheSolicitacaoActivity extends AppCompatActivity {
     private MinhaSolicitacaoTo to;
     private DetalheSolicitacaoHelper helper;
@@ -29,7 +27,6 @@ public class DetalheSolicitacaoActivity extends AppCompatActivity {
         Bundle bundle = intent.getExtras();
 
         idDiarista = (String) bundle.get("idDiarista");
-
         to = (MinhaSolicitacaoTo) bundle.getSerializable("solicitacao");
         helper = new DetalheSolicitacaoHelper(this);
         helper.preenche(to);
@@ -49,13 +46,13 @@ public class DetalheSolicitacaoActivity extends AppCompatActivity {
                 AlertDialog dialog = new AlertDialog.Builder(DetalheSolicitacaoActivity.this).create();
                 dialog.setTitle("Atenção");
                 dialog.setIcon(android.R.drawable.ic_menu_save);
-                dialog.setMessage("aceitar aceitar");
+                dialog.setMessage("Deseja realmente aceitar esta diária?");
 
                 dialog.setButton(DialogInterface.BUTTON_POSITIVE, getString(R.string.sim), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         new AceitarSolicitacaoTask(DetalheSolicitacaoActivity.this)
-                                .execute(Integer.toString(to.getIdSolicitacao()), idDiarista);
+                                .execute(Integer.toString(to.getIdSolicitacao()), idDiarista, to.getDataDiariaJson());
                     }
                 });
                 dialog.setButton(DialogInterface.BUTTON_NEGATIVE, getString(R.string.nao), new DialogInterface.OnClickListener() {
@@ -73,7 +70,7 @@ public class DetalheSolicitacaoActivity extends AppCompatActivity {
                 AlertDialog dialog = new AlertDialog.Builder(DetalheSolicitacaoActivity.this).create();
                 dialog.setTitle("Atenção");
                 dialog.setIcon(android.R.drawable.ic_menu_delete);
-                dialog.setMessage("recusar recusar");
+                dialog.setMessage("Deseja realmente recusar esta diária?");
 
                 dialog.setButton(DialogInterface.BUTTON_POSITIVE, getString(R.string.sim), new DialogInterface.OnClickListener() {
                     @Override

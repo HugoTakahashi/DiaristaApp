@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import br.com.diaristaslimpo.limpo.helper.LoginHelper;
-import br.com.diaristaslimpo.limpo.helper.MessageBox;
+import br.com.diaristaslimpo.limpo.util.MessageBox;
 import br.com.diaristaslimpo.limpo.R;
 import br.com.diaristaslimpo.limpo.task.LoginTask;
 import br.com.diaristaslimpo.limpo.to.LoginTo;
@@ -33,12 +33,13 @@ public class LoginActivity extends AppCompatActivity {
         findViewById(R.id.login_botao_logar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                helper = new LoginHelper(LoginActivity.this);
                 if (helper.validarCamposObrigatorios()) {
 
                     loginTo = helper.getLoginTo();
 
                     if (!ValidationUtil.isValidEmail(loginTo.getEmail())) {
-                        MessageBox.showAlert(LoginActivity.this, "E-mail inválido", "Escreve o email certo ai");
+                        MessageBox.showAlert(LoginActivity.this, "Atenção", "E-mail inválido");
                         return;
                     }
 

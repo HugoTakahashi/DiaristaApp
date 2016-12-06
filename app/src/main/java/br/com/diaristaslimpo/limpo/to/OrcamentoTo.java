@@ -1,9 +1,9 @@
-package br.com.diaristaslimpo.limpo.Objetos;
+package br.com.diaristaslimpo.limpo.to;
 
 /**
  * Created by user on 22/08/2016.
  */
-public class ObjOrcamento {
+public class OrcamentoTo {
     private String nome;
     private double valor;
     private String status;
@@ -11,7 +11,7 @@ public class ObjOrcamento {
     private int iconeRid;
     private String dataSolicitacao;
 
-    public ObjOrcamento() {
+    public OrcamentoTo() {
     }
 
     public String getNome() {

@@ -1,4 +1,4 @@
-package br.com.diaristaslimpo.limpo.Objetos;
+package br.com.diaristaslimpo.limpo.to;
 
 /**
  * Created by user on 03/09/2016.

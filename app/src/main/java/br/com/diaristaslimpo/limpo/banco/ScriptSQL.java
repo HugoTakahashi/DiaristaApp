@@ -7,10 +7,10 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
 
-import br.com.diaristaslimpo.limpo.Objetos.ObjDiarista;
-import br.com.diaristaslimpo.limpo.Objetos.ObjEndereco;
+import br.com.diaristaslimpo.limpo.to.DiaristaTo;
+import br.com.diaristaslimpo.limpo.to.ObjEndereco;
 import br.com.diaristaslimpo.limpo.to.MinhaSolicitacaoTo;
-import br.com.diaristaslimpo.limpo.Objetos.ObjOrcamento;
+import br.com.diaristaslimpo.limpo.to.OrcamentoTo;
 import br.com.diaristaslimpo.limpo.R;
 
 /**
@@ -199,9 +199,9 @@ public class ScriptSQL {
 
     }
 
-    public ArrayList<ObjDiarista> selectDiarista(){
-        ArrayList<ObjDiarista> array = new ArrayList<ObjDiarista>();
-        ObjDiarista obj = new ObjDiarista();
+    public ArrayList<DiaristaTo> selectDiarista(){
+        ArrayList<DiaristaTo> array = new ArrayList<DiaristaTo>();
+        DiaristaTo obj = new DiaristaTo();
         Cursor cursor = conn.rawQuery("select * from diarista",null);
         if(cursor.getCount() >0){
             cursor.moveToFirst();
@@ -216,7 +216,7 @@ public class ScriptSQL {
                 obj.setCelular(cursor.getInt(cursor.getColumnIndex("Celular")));
                 obj.setGenero(cursor.getString(cursor.getColumnIndex("Genero")));
                 array.add(obj);
-                obj = new ObjDiarista();
+                obj = new DiaristaTo();
             }while (cursor.moveToNext());
 
         }
@@ -257,9 +257,9 @@ public class ScriptSQL {
 
     }
 
-    public ArrayList<ObjOrcamento> selectListaHistorico(){
-        ArrayList<ObjOrcamento> array = new ArrayList<ObjOrcamento>();
-        ObjOrcamento obj = new ObjOrcamento();
+    public ArrayList<OrcamentoTo> selectListaHistorico(){
+        ArrayList<OrcamentoTo> array = new ArrayList<OrcamentoTo>();
+        OrcamentoTo obj = new OrcamentoTo();
         Cursor cursor = conn.rawQuery("select * from historico",null);
         if(cursor.getCount() >0){
             cursor.moveToFirst();
@@ -271,7 +271,7 @@ public class ScriptSQL {
                 obj.setStatus(cursor.getString(cursor.getColumnIndex("status")));
                 obj.setDataSolicitacao(cursor.getString(cursor.getColumnIndex("dataSolicitacao")));
                 array.add(obj);
-                obj = new ObjOrcamento();
+                obj = new OrcamentoTo();
             }while (cursor.moveToNext());
 
         }

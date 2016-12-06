@@ -1,4 +1,4 @@
-package br.com.diaristaslimpo.limpo.helper;
+package br.com.diaristaslimpo.limpo.adapter;
 
 /**
  * Created by user on 23/08/2016.
@@ -14,14 +14,14 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import br.com.diaristaslimpo.limpo.Objetos.ObjOrcamento;
+import br.com.diaristaslimpo.limpo.to.OrcamentoTo;
 import br.com.diaristaslimpo.limpo.R;
 
 public class AdapterOrcamento extends BaseAdapter{
     private LayoutInflater mInflater;
-    private ArrayList<ObjOrcamento> itens;
+    private ArrayList<OrcamentoTo> itens;
 
-    public AdapterOrcamento(Context context, ArrayList<ObjOrcamento> itens)
+    public AdapterOrcamento(Context context, ArrayList<OrcamentoTo> itens)
     {
         //Itens que preencheram o listview
         this.itens = itens;
@@ -45,7 +45,7 @@ public class AdapterOrcamento extends BaseAdapter{
      * @param position
      * @return
      */
-    public ObjOrcamento getItem(int position)
+    public OrcamentoTo getItem(int position)
     {
         return itens.get(position);
     }
@@ -64,7 +64,7 @@ public class AdapterOrcamento extends BaseAdapter{
     public View getView(int position, View view, ViewGroup parent)
     {
         //Pega o item de acordo com a posção.
-        ObjOrcamento item = itens.get(position);
+        OrcamentoTo item = itens.get(position);
         //infla o layout para podermos preencher os dados
         view = mInflater.inflate(R.layout.listview_orcamento, null);
 

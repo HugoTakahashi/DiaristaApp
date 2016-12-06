@@ -10,9 +10,9 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-import br.com.diaristaslimpo.limpo.Objetos.ObjOrcamento;
+import br.com.diaristaslimpo.limpo.to.OrcamentoTo;
 import br.com.diaristaslimpo.limpo.R;
-import br.com.diaristaslimpo.limpo.helper.AdapterOrcamento;
+import br.com.diaristaslimpo.limpo.adapter.AdapterOrcamento;
 import br.com.diaristaslimpo.limpo.task.RecebeHistoricoTask;
 import br.com.diaristaslimpo.limpo.banco.DataBase;
 import br.com.diaristaslimpo.limpo.banco.ScriptSQL;
@@ -20,7 +20,7 @@ import br.com.diaristaslimpo.limpo.banco.ScriptSQL;
 public class HistoricoActivity extends AppCompatActivity {
 
     private ListView lstOrcamento;
-    private ArrayList<ObjOrcamento> itens;
+    private ArrayList<OrcamentoTo> itens;
     private AdapterOrcamento adapterListView;
     private DataBase dataBase;
     private SQLiteDatabase conn;
@@ -40,7 +40,7 @@ public class HistoricoActivity extends AppCompatActivity {
         new RecebeHistoricoTask(this).execute(json);
 
 
-        ArrayList<ObjOrcamento> obj = scriptSQL.selectListaHistorico();
+        ArrayList<OrcamentoTo> obj = scriptSQL.selectListaHistorico();
         adapterListView = new AdapterOrcamento(this, obj);
         lstOrcamento.setAdapter(adapterListView);
 
