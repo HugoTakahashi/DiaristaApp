@@ -16,12 +16,12 @@
         "source": "C:\\Users\\user\\Downloads\\app 04-12\\Diarista-04-12-2016\\Limpo - Diarista\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-mdpi\\abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\user\\Downloads\\app 04-12\\Diarista-04-12-2016\\Limpo - Diarista\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_btn_rating_star_on_mtrl_alpha.png",
-        "source": "C:\\Users\\user\\Downloads\\app 04-12\\Diarista-04-12-2016\\Limpo - Diarista\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-mdpi\\abc_btn_rating_star_on_mtrl_alpha.png"
-    },
-    {
         "merged": "C:\\Users\\user\\Downloads\\app 04-12\\Diarista-04-12-2016\\Limpo - Diarista\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\logo.png",
         "source": "C:\\Users\\user\\Downloads\\app 04-12\\Diarista-04-12-2016\\Limpo - Diarista\\app\\src\\main\\res\\drawable-mdpi\\logo.png"
+    },
+    {
+        "merged": "C:\\Users\\user\\Downloads\\app 04-12\\Diarista-04-12-2016\\Limpo - Diarista\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_btn_rating_star_on_mtrl_alpha.png",
+        "source": "C:\\Users\\user\\Downloads\\app 04-12\\Diarista-04-12-2016\\Limpo - Diarista\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-mdpi\\abc_btn_rating_star_on_mtrl_alpha.png"
     },
     {
         "merged": "C:\\Users\\Hugo\\Desktop\\TCC-App\\Limpo - Diarista\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_camera.png",
@@ -72,12 +72,12 @@
         "source": "C:\\Users\\user\\Downloads\\app 04-12\\Diarista-04-12-2016\\Limpo - Diarista\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-mdpi\\abc_list_selector_disabled_holo_light.9.png"
     },
     {
-        "merged": "C:\\Users\\user\\Downloads\\app 04-12\\Diarista-04-12-2016\\Limpo - Diarista\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_no_image.png",
-        "source": "C:\\Users\\user\\Downloads\\app 04-12\\Diarista-04-12-2016\\Limpo - Diarista\\app\\src\\main\\res\\drawable-mdpi\\ic_no_image.png"
-    },
-    {
         "merged": "C:\\Users\\Hugo\\Desktop\\TCC-App\\Limpo - Diarista\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_btn_radio_to_on_mtrl_000.png",
         "source": "C:\\Users\\Hugo\\Desktop\\TCC-App\\Limpo - Diarista\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-mdpi\\abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "C:\\Users\\user\\Downloads\\app 04-12\\Diarista-04-12-2016\\Limpo - Diarista\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_no_image.png",
+        "source": "C:\\Users\\user\\Downloads\\app 04-12\\Diarista-04-12-2016\\Limpo - Diarista\\app\\src\\main\\res\\drawable-mdpi\\ic_no_image.png"
     },
     {
         "merged": "C:\\Users\\Hugo\\Desktop\\TCC-App\\Limpo - Diarista\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_list_divider_mtrl_alpha.9.png",

@@ -22,12 +22,14 @@ import br.com.diaristaslimpo.limpo.R;
 
 public class CalcularNotaDiaristaTask extends AsyncTask<String, Void, String> {
     private Context context;
-    private TextView textView;
+    private TextView textViewNota, textViewNumeroAvaliacoes;
     private ProgressDialog dialog;
+    private String nota, numeroAvaliacoes;
 
-    public CalcularNotaDiaristaTask(Context context, TextView textView) {
+    public CalcularNotaDiaristaTask(Context context, TextView textViewNota, TextView textViewNumeroAvaliacoes) {
         this.context = context;
-        this.textView = textView;
+        this.textViewNota = textViewNota;
+        this.textViewNumeroAvaliacoes = textViewNumeroAvaliacoes;
     }
 
     @Override
@@ -47,16 +49,19 @@ public class CalcularNotaDiaristaTask extends AsyncTask<String, Void, String> {
 
         JSONObject json = new ConectaWS().doGetJsonObject(url, param[0]);
         try {
-            return json.getString("Nota");
+            nota = json.getString("NotaFormatada");
+            numeroAvaliacoes = json.getString("NumeroAvaliacoes");
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return "0";
+
+        return "Ok";
     }
 
     @Override
     protected void onPostExecute(String result) {
-        textView.setText(result);
+        textViewNota.setText(nota);
+        textViewNumeroAvaliacoes.setText(numeroAvaliacoes);
         dialog.dismiss();
     }
 }

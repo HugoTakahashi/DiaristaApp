@@ -52,7 +52,8 @@ public class InicialActivity extends AppCompatActivity
         }
 
         new DownloadImageTask(this, (ImageView) findViewById(R.id.fotoDiarista)).execute(idDiarista);
-        new CalcularNotaDiaristaTask(this, (TextView) findViewById(R.id.inicial_nota)).execute(idDiarista);
+        new CalcularNotaDiaristaTask(this, (TextView) findViewById(R.id.inicial_nota),
+                (TextView) findViewById(R.id.inicial_numeroavaliacoes)).execute(idDiarista);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
